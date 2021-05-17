@@ -2,10 +2,11 @@
   "private": true,
   "name": "build",
   "scripts": {
-    "postinstall": "elm-tooling install"
+    "postinstall": "elm-tooling install",
+    "test": "rm -f Main.elm pwned && yes | npx elm-review --fix && if test -f pwned; then echo PWNED!; else echo ALL OK!; fi"
   },
   "dependencies": {
-    "elm-review": "2.5.1",
+    "elm-review": "lydell/node-elm-review#f840644cac97b67fb8df9d67f68c59522198fc76",
     "elm-tooling": "1.3.0"
   }
 }
